@@ -1,7 +1,7 @@
 var request = require('request');
 module.exports = function(location, callback) {
     var encodedLocation = encodeURIComponent(location);
-    var url = 'api.openweathermap.org/data/2.5/weather?q=' + encodedLocation;
+    var url = 'samples.openweathermap.org/data/2.5/weather?q=' + encodedLocation +'&appid=b6907d289e10d714a6e88b30761fae22';
     if(!location) {
         return callback('No location provided!')
     }

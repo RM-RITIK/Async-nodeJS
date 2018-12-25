@@ -12,14 +12,14 @@ var argv = require('yargs')
     .argv;
 
 if(typeof argv.location == 'string' && argv.location.length>0) {
-    console.log('has location')
+    console.log('Location was provided!')
     weather(argv.location, function(currentWeather) {
         console.log(currentWeather); 
     });
     
 }
 else{
-    console.log('no location provided');
+    console.log('Location was not provided!');
     location(function(location) {
         if(location) {
             weather(location.city, function(currentWeather) {
