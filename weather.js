@@ -1,6 +1,10 @@
 var request = require('request');
-var url = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22";
-module.exports = function(callback) {
+module.exports = function(location, callback) {
+    var encodedLocation = encodeURIComponent(location);
+    var url = 'api.openweathermap.org/data/2.5/weather?q=' + encodedLocation;
+    if(!location) {
+        return callback('No location provided!')
+    }
     request({
         url: url,
         json: true
